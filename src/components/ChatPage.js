@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import qaData from "../data/qa.json";
+import qaData from "../aiDtata/sampleData.json";
 import logo from "../assets/logo.png";
 import users from "../assets/user.png";
 
@@ -162,7 +162,7 @@ export default function ChatPage({ sidebarOpen }) {
                     marginRight: "10px",
                   }}
                 />
-                <strong>{m.sender === "user" ? "You" : "Soul AI"}</strong>
+                <span>{m.sender === "user" ? "You" : "Soul AI"}</span>
               </div>
 
               <p style={{ margin: 0 }}>{m.text}</p>
@@ -185,9 +185,9 @@ export default function ChatPage({ sidebarOpen }) {
         }}
       >
         <input
+          placeholder="Message Bot AI..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Message Bot AI..."
           style={{
             flex: 1,
             padding: "12px",
@@ -197,7 +197,7 @@ export default function ChatPage({ sidebarOpen }) {
         />
 
         <button
-          type="submit"
+         type="submit"
           style={{
             background: "#9785BA",
             color: "white",
